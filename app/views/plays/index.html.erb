@@ -1,0 +1,8 @@
+
+  <p><%= @question.description %></p>
+
+  <%= form_tag controller: "plays", action: "answer", method: :post do %>
+    <label for="answer">Answer</label>
+    <%= text_field_tag :answer %>
+   <%= submit_tag "Submit" %>
+  <% end %>
