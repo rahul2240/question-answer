@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :custom_method, only: [:new, :edit, :create, :destroy]
+  before_action :custom_method, only: [:index, :show, :new, :edit, :create, :destroy]
   # GET /questions
   # GET /questions.json
   def index

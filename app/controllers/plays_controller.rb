@@ -8,13 +8,17 @@ class PlaysController < ApplicationController
   def answer
     @question = Question.find(current_user.question_number)
     @answer = params["answer"]
-    if @answer == @question.answer
+    if @answer == @question.answer && current_user.question_number.to_i == @question.id.to_i
       current_user.score =  current_user.score.to_i  + 10
       current_user.question_number =  current_user.question_number.to_i + 1
       current_user.save
-    else
-      redirect_to '/plays/index'
     end
+    redirect_to '/plays/index'
+  end
+
+  def leaderboard
+    @users = User.order("score DESC").all
+
   end
 
 end
