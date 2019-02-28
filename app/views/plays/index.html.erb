@@ -1,8 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-  <p><%= @question.description %></p>
+
+  <p> <b>Q.<b/> <b><%= @question.description %></b> </p>
+
+
 
   <%= form_tag controller: "plays", action: "answer", method: :post do %>
-    <label for="answer">Answer</label>
-    <%= text_field_tag :answer %>
-   <%= submit_tag "Submit" %>
+  <br>
+    <%= text_field :answer, autofocus: true, class: 'form-control' %>
+    <br>
+   <%= submit_tag "Submit", class: 'btn btn-primary' %>
+
   <% end %>
+
+</div>
+</div>

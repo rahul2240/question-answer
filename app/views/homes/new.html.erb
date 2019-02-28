@@ -1,16 +1,6 @@
 <style>
-  ul.hmenu {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
-}
-
-ul.hmenu li {
-  display: inline;
-}
-
+color: white;
 </style>
-
 <ul class="hmenu">
 <% if user_signed_in? %>
   <li>
@@ -31,6 +21,9 @@ ul.hmenu li {
   <li>
   <%= link_to('Register', new_user_registration_path)  %>
   </li>
+
 <% end %>
+
+
 
 </ul>

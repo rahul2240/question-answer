@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
         def configure_permitted_parameters
             devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :zeal_id, :email, :password, :password_confirmation])
-            devise_parameter_sanitizer.permit(:account_update, keys: [:name, :password, :password_confirmation, :current_password]) 
+            devise_parameter_sanitizer.permit(:account_update, keys: [:name, :password, :password_confirmation, :current_password])
+        end
+
+        def after_sign_up_path_for(resource)
+          plays_index_url
+        end
+
+        def after_sign_in_path_for(resource)
+          plays_index_url
         end
 end

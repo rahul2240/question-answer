@@ -1,174 +1,16 @@
-<style>
-@import url('https://fonts.googleapis.com/css?family=Acme');
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light');
-body
-{
-    font-family: 'Acme', sans-serif;
-}
-#back
-{
-    background-image:url("space.jpg");
-    background-size:100% 100%;
-    position: relative;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:1000px;
-}
-h4{
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: bolder;
-    margin-left:500px;
-    font-size:2em;
-    color: #ffcc00;
-    text-shadow:0 0 1.3em rgba(0,0,0,0.3);
-}
-form{
-    font-size:1.2em;
-    padding:2%;
-}
-.form-group
-{
-    background-color:rgba(0,0,0,0.4);
-    box-shadow:0 0 1em rgba(0,0,0,0.5);
-    float:auto;
-    padding:40px;
-    margin-left:500px;
-    margin-right:500px;
-    border-radius:1em;
-}
-.form-control
-{
-height:30px;
-position: relative;
-overflow-x:auto;
-overflow-y:auto;
--ms-overflow-style: auto;
-}
-.form-control:hover
-{
-  background-color:#ddd;
 
-}
-button{
-    margin-left:500px;
-    background-color:#4d4dff;
-    border:none;
-    padding:10px;
-    color:white;
-    border-radius:5px;
-    box-shadow:0 0 1.2em rgba(0,0,0,0.5);
-}
-button:hover{
-    transform:scale(1.5);
-    -ms-transform:scale(1.5);
-    -webkit-transform:scale(1.5);
-    padding:1%;
-    background-color:#4d4dff;
-}
-label
-{
-    color:#ffe066;
-}
-label:hover
-{
-font-size:1.5em;
-transition:2s;
-}
-
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Acme');
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light');
-body
-{
-    font-family: 'Acme', sans-serif;
-}
-#back
-{
-    background-image:url("space.jpg");
-    background-size:100% 100%;
-    position: relative;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:1000px;
-}
-h4{
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: bolder;
-    margin-left:500px;
-    font-size:2em;
-    color: #ffcc00;
-    text-shadow:0 0 1.3em rgba(0,0,0,0.3);
-}
-form{
-    font-size:1.2em;
-    padding:2%;
-}
-.form-group
-{
-    background-color:rgba(0,0,0,0.4);
-    box-shadow:0 0 1em rgba(0,0,0,0.5);
-    float:auto;
-    padding:40px;
-    margin-left:500px;
-    margin-right:500px;
-    border-radius:1em;
-}
-.form-control
-{
-height:30px;
-position: relative;
-overflow-x:auto;
-overflow-y:auto;
--ms-overflow-style: auto;
-}
-.form-control:hover
-{
-  background-color:#ddd;
-
-}
-button{
-    margin-left:500px;
-    background-color:#4d4dff;
-    border:none;
-    padding:10px;
-    color:white;
-    border-radius:5px;
-    box-shadow:0 0 1.2em rgba(0,0,0,0.5);
-}
-button:hover{
-    transform:scale(1.5);
-    -ms-transform:scale(1.5);
-    -webkit-transform:scale(1.5);
-    padding:1%;
-    background-color:#4d4dff;
-}
-label
-{
-    color:#ffe066;
-}
-label:hover
-{
-font-size:1.5em;
-transition:2s;
-}
-
-
-</style>
 <h2>Log in</h2>
-
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -179,8 +21,10 @@ transition:2s;
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>

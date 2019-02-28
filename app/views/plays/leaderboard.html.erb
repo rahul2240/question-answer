@@ -1,3 +1,35 @@
-<% @users.each do |user| %>
-  <p><%= user.email %> <%= user.score %></p>
-<% end %>
+
+<div id="particles-js">
+        <div class="btext">
+            <h1>Leaderboard</h1>
+            <!--<img src="user.png" style="border-radius:7em;margin-left:1100px;height:100px;float:right;margin-top:-75px;">-->
+        </div>
+        <div>
+        <table class="table container">
+            <thead>
+                    <tr style="background-color:#5cd6d6;color:white;">
+
+                            <th>Name</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% @users.each do |user| %>
+                        <tr>
+
+                            <td><%= user.name %></td><td> <%= user.score %></td>
+
+                        </tr>
+                        <% end %>
+                    </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+      particlesJS.load('particles-js','particles.json',
+      function()
+      {
+          console.log('particles-json loaded....');
+      });
+    </script>
